@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Logo Styling */
+.logo-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.logo path {
+    fill: #ffffff;
+    transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-link:hover .logo path {
+    fill: #4a90e2;
+    opacity: 0.9;
+}
+
+.logo-link:active .logo path {
+    fill: #2e5c8a;
+}
+
+.foreground-image {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 30vw;
+    height: auto;
+}
+
+h1 {
+    position: fixed;
+    top: 120px;
+    left: 50px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+p {
+    position: fixed;
+    top: 220px;
+    left: 50px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
