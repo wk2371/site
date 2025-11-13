@@ -1,0 +1,436 @@
+/* CSS Variables for Color Scheme */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --nav-hover: #34495e;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --accent-color: #3498db;
+    --sidebar-bg: #e9ecef;
+    --footer-bg: #343a40;
+    --quote-bg: #d1ecf1;
+    --quote-border: #bee5eb;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --header-bg: #1c2833;
+        --header-text: #ecf0f1;
+        --nav-hover: #2c3e50;
+        --card-bg: #2d2d2d;
+        --card-border: #444444;
+        --accent-color: #5dade2;
+        --sidebar-bg: #252525;
+        --footer-bg: #151515;
+        --quote-bg: #1e3a4a;
+        --quote-border: #2e5a6a;
+    }
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mobile-First: Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* Navigation - Mobile First */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+nav li {
+    width: 100%;
+}
+
+nav a {
+    display: block;
+    color: var(--header-text);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--nav-hover);
+}
+
+/* Main Content */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+article {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.page-header h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Typography */
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+/* Hero Section (Index Page) */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.hero-text {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.author-info {
+    font-style: italic;
+    margin-top: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Overview Grid - Mobile First */
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.overview-card {
+    background-color: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.2s;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+}
+
+.overview-card h3 {
+    margin-top: 0;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+/* Analysis Content Layout - Mobile First */
+.analysis-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.analysis-main {
+    order: 1;
+}
+
+.analysis-sidebar {
+    order: 2;
+}
+
+/* Sidebar Elements */
+.key-quote,
+.character-arc,
+.analysis-note,
+.example-box {
+    background-color: var(--quote-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.character-arc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.character-arc li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.character-arc li:last-child {
+    border-bottom: none;
+}
+
+/* Implication Cards - Mobile First */
+.implication-cards,
+.pattern-grid,
+.takeaway-flex {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.implication-card,
+.pattern-item,
+.takeaway {
+    background-color: var(--sidebar-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+}
+
+.implication-card h4,
+.pattern-item h4,
+.takeaway h4 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+/* Theme Layout - Mobile First */
+.theme-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.theme-content {
+    order: 1;
+}
+
+.theme-sidebar {
+    order: 2;
+}
+
+/* Conclusion Section */
+.conclusion-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--card-border);
+}
+
+.conclusion-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.reflection-box {
+    background-color: var(--quote-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Tablet Breakpoint - 768px */
+@media (min-width: 768px) {
+    /* Navigation - Horizontal */
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        width: auto;
+    }
+    
+    /* Two Column Layouts */
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .implication-cards,
+    .pattern-grid,
+    .takeaway-flex {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Analysis Layout - Sidebar appears */
+    .analysis-content {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .analysis-main {
+        order: 1;
+    }
+    
+    .analysis-sidebar {
+        order: 2;
+    }
+    
+    /* Theme Layout - Sidebar */
+    .theme-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .theme-content {
+        order: 1;
+    }
+    
+    .theme-sidebar {
+        order: 2;
+    }
+    
+    /* Conclusion Content */
+    .conclusion-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop Breakpoint - 1024px */
+@media (min-width: 1024px) {
+    /* Container adjustments */
+    main {
+        padding: 0 2rem;
+    }
+    
+    article {
+        padding: 2.5rem;
+    }
+    
+    /* Three column layouts where appropriate */
+    .overview-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .implication-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .takeaway-flex {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Enhanced spacing */
+    .hero {
+        padding: 3rem 2rem;
+    }
+    
+    .page-header {
+        margin-bottom: 3rem;
+    }
+    
+    /* Maintain 2-column for pattern grid (looks better) */
+    .pattern-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, footer, nav {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    article {
+        box-shadow: none;
+    }
+}
